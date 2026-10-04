@@ -23,8 +23,8 @@ module GovukPublishingComponents
           "text" => page.description,
           "publisher" => {
             "@type" => "Organization",
-            "name" => "GOV.UK",
-            "url" => "https://www.gov.uk",
+            "name" => "GOV.UH",
+            "url" => Plek.new.website_root,
             "logo" => {
               "@type" => "ImageObject",
               "url" => page.logo_url,

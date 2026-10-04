@@ -5,6 +5,13 @@ describe "Machine readable metadata", type: :view do
     "machine_readable_metadata"
   end
 
+  it "identifies the public service as GOV.UH in OpenGraph metadata" do
+    example = GovukSchemas::RandomExample.for_schema(frontend_schema: "guide")
+    render_component(content_item: example, schema: :article)
+
+    assert_select "meta[property='og:site_name'][content='GOV.UH']"
+  end
+
   it "generates machine readable JSON-LD for articles" do
     example = GovukSchemas::RandomExample.for_schema(frontend_schema: "guide")
     render_component(content_item: example, schema: :article)

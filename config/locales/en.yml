@@ -67,9 +67,9 @@ en:
       hide: Hide cookie message
       text:
       - We use some essential cookies to make this website work.
-      - We’d like to set additional cookies to understand how you use GOV.UK, remember your settings and improve government services.
+      - We’d like to set additional cookies to understand how you use GOV.UH, remember your settings and improve government services.
       - We also use cookies set by other sites to help us deliver content from their services.
-      title: Cookies on GOV.UK
+      title: Cookies on GOV.UH
     devolved_nations:
       applies_to: Applies to
       aria_label: Nation
@@ -96,14 +96,14 @@ en:
         start: Wales
     feedback:
       close: Cancel
-      dont_include_personal_info: Do not include personal or financial information like your National Insurance number or credit card details.
+      dont_include_personal_info: Do not include personal or financial information such as passwords, payment card details or account credentials.
       email_address: Email address
-      help_us_improve_govuk: Help us improve GOV.UK
+      help_us_improve_govuk: Help us improve GOV.UH
       is_not_useful: this page is not useful
       is_this_page_useful: Is this page useful?
       is_useful: this page is useful
       maybe: Maybe
-      more_about_visit: To help us improve GOV.UK, we’d like to know more about your visit today.
+      more_about_visit: To help us improve GOV.UH, we’d like to know more about your visit today.
       'no': 'No'
       send: Send
       send_me_survey: Send me the survey
@@ -117,8 +117,8 @@ en:
     intervention:
       accessible_link_text_suffix: " (opens in a new tab)"
     layout_footer:
-      copyright_html: <a class="govuk-footer__link govuk-footer__copyright-logo" href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">© Crown copyright</a>
-      licence_html: All content is available under the <a class="govuk-footer__link" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated
+      copyright_html: <a class="govuk-footer__link govuk-footer__copyright-logo" href="https://nationalarchives.gov.uhrblx.com/information-management/re-using-public-sector-information/uh-government-licensing-framework/crown-copyright/">© Crown copyright</a>
+      licence_html: All content is available under the <a class="govuk-footer__link" href="https://nationalarchives.gov.uhrblx.com/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated
       navigation_links:
       - title: Services and information
         menu_contents:
@@ -254,7 +254,7 @@ en:
           description: Data, Freedom of Information releases and corporate reports
       navigation_menu_heading: Navigation menu
       navigation_search_subheading: Search
-      search_text: Search GOV.UK
+      search_text: Search GOV.UH
     metadata:
       and: and
       from: From
@@ -340,7 +340,7 @@ en:
       world_locations: World locations
     search_box:
       input_title: Search
-      label: Search on GOV.UK
+      label: Search on GOV.UH
       search_button: Search
     service_navigation:
       menu_toggle: Menu

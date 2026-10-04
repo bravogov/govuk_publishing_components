@@ -56,7 +56,7 @@ describe "Feedback", type: :view do
     assert_select ".js-something-is-wrong[data-ga4-event='{\"event_name\":\"form_submit\",\"type\":\"feedback\",\"text\":\"Report a problem with this page\",\"section\":\"Is this page useful?\",\"tool_name\":\"Is this page useful?\"}']"
 
     # Report a problem submit
-    assert_select ".govuk-button[data-ga4-event='{\"event_name\":\"form_submit\",\"type\":\"feedback\",\"text\":\"Send\",\"section\":\"Help us improve GOV.UK\",\"tool_name\":\"Help us improve GOV.UK\"}']"
+    assert_select ".govuk-button[data-ga4-event='{\"event_name\":\"form_submit\",\"type\":\"feedback\",\"text\":\"Send\",\"section\":\"Help us improve GOV.UH\",\"tool_name\":\"Help us improve GOV.UH\"}']"
   end
 
   it "can have its GA4 tracking disabled" do
@@ -80,7 +80,7 @@ describe "Feedback", type: :view do
   it "The survey link exists, with c=no-js on the link by default" do
     render_component({})
 
-    assert_select "#survey_explanation a[href='https://www.smartsurvey.co.uk/s/gov-uk-banner/?c=no-js']"
+    assert_select "#survey_explanation a[href='/contact/']"
   end
 
   it "The survey link opens in a new tab, with rel='noopener noreferrer external' and the new tab/no JS guidance text" do
