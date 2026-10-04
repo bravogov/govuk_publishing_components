@@ -1,0 +1,4 @@
+Approved central-government arms source for the UH single-identity organisation component.
+Master: approved-government-crest.webp, SHA-256 bd1ff9f66f8cc1d421f65d09ec3a0b53bed34c2f88c3dea1eb2317a358db7804.
+Presentation asset: app/assets/images/govuk_publishing_components/crests/uh_crest_18px_x2.png, 72 x 64 RGBA, preserving the approved master aspect ratio.
+The existing organisation logo component and institution-specific crest mappings remain native and distinct.
