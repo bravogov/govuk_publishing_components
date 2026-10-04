@@ -1,4 +1,5 @@
 require "rails_helper"
+require "digest"
 
 describe "Organisation logo", type: :view do
   def component_name
@@ -35,6 +36,11 @@ describe "Organisation logo", type: :view do
   it "adds a crest class when specified" do
     render_component(organisation: { name: "Crested", crest: "single-identity" })
     assert_select ".gem-c-organisation-logo__container.gem-c-organisation-logo__crest.gem-c-organisation-logo__crest--single-identity"
+  end
+
+  it "uses the approved Interior Office crest for the home-office crest type" do
+    crest = File.expand_path("../../app/assets/images/govuk_publishing_components/crests/ho_crest_18px_x2.png", __dir__)
+    expect(Digest::SHA256.file(crest).hexdigest).to eq("47b76ed927bb6b19726bb456b0ed2822e14d3ddf5ec405ef418da9aee2e65897")
   end
 
   it "omits the crest class when not specified" do

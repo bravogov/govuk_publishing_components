@@ -1,0 +1,6 @@
+Shared GOV.UH identity provenance
+Central organisation crest master: approved-government-crest.webp, SHA-256 bd1ff9f66f8cc1d421f65d09ec3a0b53bed34c2f88c3dea1eb2317a358db7804.
+Shared footer uses the same approved central-government arms, not the original UK footer crown.
+Header and compact modal logo use uh_header_crown.png copied unchanged from the separately approved UH header crown, SHA-256 293218916b282a75c89326fab581942fe1f46652a32d122c17d47c9545398675.
+The native upstream logo, header, super-navigation, footer and organisation components retain their ordinary component functions. The specific original GOV.UK artwork/wordmark is replaced in those common rendering points; distinct organisation crest mappings remain unchanged.
+This source candidate is not an approved production release. The compiled asset manifest, official licensing/copyright destinations, institution-specific crest acceptance and consumer application rebuilds must still pass the S0 release gate.

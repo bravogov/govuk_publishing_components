@@ -10,6 +10,13 @@ describe "Layout footer", type: :view do
     assert_select ".govuk-footer"
   end
 
+  it "renders the approved UH arms instead of the inherited footer crown" do
+    render_component({})
+
+    assert_select "img.govuk-footer__crown[src*='uh_footer_arms'][alt='']", count: 1
+    assert_select "svg.govuk-footer__crown", count: 0
+  end
+
   it "renders the footer with meta links" do
     render_component(
       meta: {

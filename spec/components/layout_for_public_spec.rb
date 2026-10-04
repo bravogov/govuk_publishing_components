@@ -20,7 +20,7 @@ describe "Layout for public", :capybara, type: :view do
   it "adds a default <title> tag" do
     render_component({})
 
-    assert_select "title", visible: :hidden, text: "GOV.UK - The best place to find government services and information"
+    assert_select "title", visible: :hidden, text: "GOV.UH - The best place to find government services and information"
   end
 
   it "adds a custom <title> tag" do

@@ -11,6 +11,15 @@ describe "Layout header", type: :view do
     assert_select ".govuk-header"
   end
 
+  it "renders the approved UH header wordmark and crown" do
+    render_component({})
+
+    assert_select ".gem-c-uh-logotype[aria-label='GOV.UH']", count: 1
+    assert_select ".gem-c-uh-logotype__crown[src*='uh_header_crown']", count: 1
+    assert_select ".gem-c-uh-logotype__text", text: "GOV.UH"
+    assert_select "svg[aria-label='GOV.UK']", count: 0
+  end
+
   it "renders the header without environment tag if no environment is given" do
     render_component({})
 
