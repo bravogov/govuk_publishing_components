@@ -10,7 +10,7 @@ describe "GOV.UH native super navigation upstream provenance" do
   it "uses the exact UK super navigation template apart from UH identity" do
     source = File.read(File.join(root, "app/views/govuk_publishing_components/components/_layout_super_navigation_header.html.erb"))
     expect(source).to include("gem-c-layout-super-navigation-header")
-    expect(source).to include('govuk_publishing_components/components/govuk_logo/govuk_logo')
+    expect(source).to include("govuk_publishing_components/components/govuk_logo/govuk_logo")
     expected_upstream = source.gsub("https://www.gov.uhrblx.com/", "https://www.gov.uk/").gsub("GOV.UH", "GOV.UK")
     expect(Digest::SHA256.hexdigest(expected_upstream)).to eq("065fd3e94f8caba4cecbf4849868c8bd388b85e1f33230f499e0a6d89f4c372e")
     expect(source).not_to include("govuh-menu-button")
