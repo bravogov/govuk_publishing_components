@@ -39,7 +39,7 @@ describe "Organisation logo", type: :view do
   end
 
   it "uses the approved Interior Office crest for the home-office crest type" do
-    crest = Rails.root.join("app/assets/images/govuk_publishing_components/crests/ho_crest_18px_x2.png")
+    crest = File.expand_path("../../app/assets/images/govuk_publishing_components/crests/ho_crest_18px_x2.png", __dir__)
     expect(Digest::SHA256.file(crest).hexdigest).to eq("47b76ed927bb6b19726bb456b0ed2822e14d3ddf5ec405ef418da9aee2e65897")
   end
 
