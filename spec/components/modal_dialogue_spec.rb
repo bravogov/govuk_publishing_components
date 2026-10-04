@@ -13,6 +13,12 @@ describe "Modal dialogue", type: :view do
     assert_select ".gem-c-modal-dialogue__content", text: "Content"
   end
 
+  it "uses the approved UH crown in the compact logo" do
+    render_component(id: "my-modal") { "Content" }
+
+    assert_select "img[src*='uh_header_crown'][alt='']", minimum: 1
+  end
+
   it "applies modifier class to the wide modal" do
     render_component(id: "my-modal", wide: true) do
       "Content"

@@ -100,3 +100,30 @@
     }
   }
 }
+
+// Same GOV.UK header composition, using the separately approved UH crown.
+.gem-c-uh-logotype {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  width: auto;
+  height: 30px;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+  color: inherit;
+}
+
+.gem-c-uh-logotype__crown {
+  display: block;
+  width: 32px;
+  height: 30px;
+  object-fit: contain;
+}
+
+@include govuk-media-query($media-type: print) {
+  .gem-c-uh-logotype__crown {
+    filter: brightness(0);
+  }
+}

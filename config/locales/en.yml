@@ -188,7 +188,7 @@ en:
       menu: Menu
       top_level: Top level
     layout_super_navigation_header:
-      logo_link_title: Go to the GOV.UK homepage
+      logo_link_title: Go to the GOV.UH homepage
       menu_toggle_label:
         hide: Hide %{label} menu
         show: Show %{label} menu
