@@ -1,0 +1,127 @@
+# Targeted UH translations for the original GOV.UK shared publishing components.
+# The header/footer use original component templates and approved native identity assets.
+en:
+  components:
+    cookie_banner:
+      title: Cookies on GOV.UH
+      text:
+      - We use some essential cookies to make this website work.
+      - We’d like to set additional cookies to understand how you use GOV.UH, remember your settings and improve
+        government services.
+      - We also use cookies set by other sites to help us deliver content from their services.
+    feedback:
+      help_us_improve_govuk: Help us improve GOV.UH
+      more_about_visit: To help us improve GOV.UH, we’d like to know more about your visit today.
+      dont_include_personal_info: Do not include personal or financial information such as passwords, payment card
+        details or account credentials.
+    layout_super_navigation_header:
+      logo_link_title: Go to the GOV.UH homepage
+      menu_toggle_label:
+        hide: Hide %{label} menu
+        show: Show %{label} menu
+      navigation_link:
+        href: /browse
+        label: Menu
+      navigation_links_columns:
+      - label: Services and information
+        size: 2
+        menu_contents:
+        - label: Citizenship and living in Havenstead
+          href: /browse/citizenship-living-havenstead/
+        - label: Crime, justice and the law
+          href: /browse/crime-justice-law/
+        - label: Disabled people and accessibility
+          href: /browse/disabled-people/
+        - label: Education and learning
+          href: /browse/education-learning/
+        - label: Employing people
+          href: /browse/employing-people/
+        - label: Infrastructure and local services
+          href: /browse/infrastructure-local-services/
+        - label: Money and tax
+          href: /browse/money-tax/
+        - label: Passports, travel and living abroad
+          href: /browse/travel-abroad/
+        - label: Visas and immigration
+          href: /browse/visas-immigration/
+        - label: Working, jobs and skills
+          href: /browse/working-jobs-skills/
+        - label: Wellbeing, safeguarding and care
+          href: /browse/wellbeing-care/
+        - label: Government and democracy
+          href: /browse/government-democracy/
+      - label: Government activity
+        column_size: 1
+        menu_contents:
+        - label: Departments
+          href: /government/organisations
+          description: Departments, agencies and public bodies
+        - label: News
+          href: /search/news-and-communications
+          description: News stories, speeches, letters and notices
+        - label: Guidance and regulation
+          href: /search/guidance-and-regulation
+          description: Detailed guidance, regulations and rules
+        - label: Research and statistics
+          href: /search/research-and-statistics
+          description: Reports, analysis and official statistics
+        - label: Policy papers and consultations
+          href: /search/policy-papers-and-consultations
+          description: Consultations and strategy
+        - label: Transparency
+          href: /search/transparency-and-freedom-of-information-releases
+          description: Data, information releases and corporate reports
+      navigation_menu_heading: Navigation menu
+      navigation_search_subheading: Search
+      search_text: Search GOV.UH
+    layout_footer:
+      copyright_html: <a class="govuk-footer__link govuk-footer__copyright-logo" href="https://nationalarchives.gov.uhrblx.com/information-management/re-using-public-sector-information/uh-government-licensing-framework/crown-copyright/">©
+        Crown copyright</a>
+      licence_html: All content is available under the <a class="govuk-footer__link" href="https://nationalarchives.gov.uhrblx.com/doc/open-government-licence/version/3/"
+        rel="license">Open Government Licence v3.0</a>, except where otherwise stated
+      navigation_links:
+      - title: Services and information
+        menu_contents:
+        - text: Citizenship and living in Havenstead
+          href: /browse/citizenship-living-havenstead/
+        - text: Crime, justice and the law
+          href: /browse/crime-justice-law/
+        - text: Disabled people and accessibility
+          href: /browse/disabled-people/
+        - text: Education and learning
+          href: /browse/education-learning/
+        - text: Employing people
+          href: /browse/employing-people/
+        - text: Infrastructure and local services
+          href: /browse/infrastructure-local-services/
+        - text: Money and tax
+          href: /browse/money-tax/
+        - text: Passports, travel and living abroad
+          href: /browse/travel-abroad/
+        - text: Visas and immigration
+          href: /browse/visas-immigration/
+        - text: Working, jobs and skills
+          href: /browse/working-jobs-skills/
+        - text: Wellbeing, safeguarding and care
+          href: /browse/wellbeing-care/
+        - text: Government and democracy
+          href: /browse/government-democracy/
+      - title: Government activity
+        menu_contents:
+        - text: Departments
+          href: /government/organisations
+        - text: News
+          href: /search/news-and-communications
+        - text: Guidance and regulation
+          href: /search/guidance-and-regulation
+        - text: Research and statistics
+          href: /search/research-and-statistics
+        - text: Policy papers and consultations
+          href: /search/policy-papers-and-consultations
+        - text: Transparency
+          href: /search/transparency-and-freedom-of-information-releases
+        - text: How government works
+          href: /government/how-government-works
+        - text: Get involved
+          href: /government/get-involved
+      support_links: Support links
