@@ -10,7 +10,17 @@
 %>
 <%= tag.footer(**component_helper.all_attributes) do %>
   <div class="govuk-width-container">
-    <%= image_tag "govuk_publishing_components/uh_header_crown.png", class: "govuk-footer__crown", width: 32, height: 30, alt: "", role: "presentation" %>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      focusable="false"
+      role="presentation"
+      viewBox="0 0 64 60"
+      height="30"
+      width="32"
+      fill="currentcolor"
+      class="govuk-footer__crown">
+      <image href="<%= asset_path "govuk_publishing_components/uh_footer_arms.webp" %>" x="0" y="0" width="64" height="60" preserveAspectRatio="xMidYMid meet"></image>
+    </svg>
     <% if navigation.any? %>
       <div class="govuk-footer__navigation">
         <% navigation.each_with_index do |section, ga4_section_index| %>
