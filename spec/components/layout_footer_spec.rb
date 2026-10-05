@@ -10,11 +10,11 @@ describe "Layout footer", type: :view do
     assert_select ".govuk-footer"
   end
 
-  it "renders the approved UH crown in the original footer crown slot" do
+  it "keeps the upstream GOV.UK footer crown and uses the copyright-logo seam for the UH arms" do
     render_component({})
 
     assert_select "svg.govuk-footer__crown", count: 1
-    assert_select "svg.govuk-footer__crown image[href*='uh_footer_arms']", count: 1
+    assert_select "svg.govuk-footer__crown image", count: 0
     assert_select "a.govuk-footer__copyright-logo", count: 1
   end
 
