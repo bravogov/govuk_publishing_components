@@ -29,13 +29,6 @@ module GovukPublishingComponents
             text: "Terms and conditions",
           },
           {
-            href: "/cymraeg",
-            text: "Rhestr o Wasanaethau Cymraeg",
-            attributes: {
-              lang: "cy",
-            },
-          },
-          {
             href: "/government/organisations/government-digital-service",
             text: "Government Digital Service",
           },

@@ -10,11 +10,19 @@ describe "Layout footer", type: :view do
     assert_select ".govuk-footer"
   end
 
-  it "renders the approved UH arms instead of the inherited footer crown" do
+  it "keeps the upstream GOV.UK footer crown and uses the copyright-logo seam for the UH arms" do
     render_component({})
 
-    assert_select "img.govuk-footer__crown[src*='uh_footer_arms'][alt='']", count: 1
-    assert_select "svg.govuk-footer__crown", count: 0
+    assert_select "svg.govuk-footer__crown", count: 1
+    assert_select "svg.govuk-footer__crown image", count: 0
+    assert_select "a.govuk-footer__copyright-logo", count: 1
+  end
+
+  it "does not include the UK-only Welsh services link by default" do
+    render_component({})
+
+    assert_select "a[href='/cymraeg']", count: 0
+    assert_select "[lang='cy']", count: 0
   end
 
   it "renders the footer with meta links" do

@@ -121,6 +121,10 @@
   @include crest($crest: "hmrc_crest", $xpos: 8px);
 }
 
+.gem-c-organisation-logo__crest--hcg {
+  @include crest($crest: "hcg_crest", $xpos: 8px);
+}
+
 .gem-c-organisation-logo__crest--ho {
   @include crest($crest: "ho_crest", $xpos: 9px);
   @include tall-crest;
@@ -138,7 +142,7 @@
 .gem-c-organisation-logo__crest--single-identity,
 .gem-c-organisation-logo__crest--eo,
 .gem-c-organisation-logo__crest--org {
-  @include crest($crest: "uh_crest", $xpos: 8px);
+  @include crest($crest: "org_crest", $xpos: 8px);
 }
 
 .gem-c-organisation-logo__crest--portcullis {
