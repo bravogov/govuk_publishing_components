@@ -23,7 +23,7 @@ describe "GOV.UH approved shared identity assets" do
 
   it "keeps the exact upstream footer component and replaces only the Royal Arms asset" do
     footer = File.read(File.join(views, "_layout_footer.html.erb"))
-    upstream_footer_sha256 = "da02ee0d948780d94ab4f47dfb01c93999fb01d5"
+    upstream_footer_sha256 = "05da39a55a759dc1426a3993352c98753fd3658d533b9e5832f5f5622cb08165"
     expect(Digest::SHA256.hexdigest(footer)).to eq(upstream_footer_sha256)
     expect(footer).not_to include("uh_footer_arms")
     crest = File.read(File.join(root, "app/assets/images/govuk-crest.svg"))
