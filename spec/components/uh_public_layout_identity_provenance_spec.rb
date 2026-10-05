@@ -30,6 +30,6 @@ RSpec.describe "GOV.UH original public layout identity slots" do
     expect(layout).to include('asset_url("govuk_publishing_components/uh_opengraph_image.png", host: Plek.website_root)')
     expect(layout).not_to include('asset_url("govuk-opengraph-image.png"')
     expect(layout).not_to include('asset_path "favicon.ico"')
-    expect(layout).to include('yield :head')
+    expect(layout).to include("yield :head")
   end
 end
