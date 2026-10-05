@@ -17,13 +17,16 @@ describe "GOV.UH approved shared identity assets" do
     end
     expect(File.read(File.join(views, "_layout_super_navigation_header.html.erb")))
       .to include("govuk_publishing_components/components/govuk_logo/govuk_logo")
+    header_css = File.read(File.join(root, "app/assets/stylesheets/govuk_publishing_components/components/_layout-header.scss"))
+    expect(header_css).not_to include("gem-c-uh-logotype")
   end
 
   it "uses the approved UH crown in the original footer crown slot and UH arms at the copyright crest asset seam" do
     expect(Digest::SHA256.file(File.join(images, "uh_footer_arms.webp")).hexdigest)
       .to eq("66cd5d449026855d0eb6308e1f62787be6cf90748b22da3194b22d5734de5644")
-    expect(File.read(File.join(views, "_layout_footer.html.erb")))
-      .to include('image_tag "govuk_publishing_components/uh_header_crown.png"')
+    footer = File.read(File.join(views, "_layout_footer.html.erb"))
+    expect(footer).to include("govuk-footer__crown")
+    expect(footer).to include("govuk_publishing_components/uh_footer_arms.webp")
     crest = File.read(File.join(root, "app/assets/images/govuk-crest.svg"))
     expect(crest).to include("data:image/webp;base64,")
     expect(File.read(File.join(views, "_machine_readable_metadata.html.erb")))
