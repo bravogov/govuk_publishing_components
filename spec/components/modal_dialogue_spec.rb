@@ -16,7 +16,7 @@ describe "Modal dialogue", type: :view do
   it "uses the approved UH crown in the compact logo" do
     render_component(id: "my-modal") { "Content" }
 
-    assert_select "img[src*='uh_header_crown'][alt='']", minimum: 1
+    assert_select "svg.govuk-header__logotype image[href*='uh_header_crown']", minimum: 1
   end
 
   it "applies modifier class to the wide modal" do
