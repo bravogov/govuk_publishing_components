@@ -14,9 +14,10 @@ describe "Layout header", type: :view do
   it "renders the approved UH header wordmark and crown" do
     render_component({})
 
-    assert_select ".gem-c-uh-logotype[aria-label='GOV.UH']", count: 1
-    assert_select ".gem-c-uh-logotype__crown[src*='uh_header_crown']", count: 1
-    assert_select ".gem-c-uh-logotype__text", text: "GOV.UH"
+    assert_select "svg.govuk-header__logotype[aria-label='GOV.UH']", count: 1
+    assert_select "svg.govuk-header__logotype image[href*='uh_header_crown']", count: 1
+    assert_select "svg.govuk-header__logotype title", text: "GOV.UH"
+    assert_select ".gem-c-uh-logotype", count: 0
     assert_select "svg[aria-label='GOV.UK']", count: 0
   end
 
