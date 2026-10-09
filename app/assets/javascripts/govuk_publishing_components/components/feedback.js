@@ -164,7 +164,7 @@
     var genericError = [
       '<h2>Sorry, we’re unable to receive your message right now.</h2>',
       ' <p>If the problem persists, we have other ways for you to provide',
-      ' feedback on the <a href="/contact/govuk">contact page</a>.</p>'
+      ' feedback on the <a href="/contact/gov-uh">contact page</a>.</p>'
     ].join('')
     // if the response is not a 404 or 500, show the error message if it exists
     // otherwise show the generic message
