@@ -1,5 +1,11 @@
 @import "govuk/components/footer";
 
+// GOV.UH uses its approved crest; do not inherit the UK Government footer arms.
+// The original responsive GOV.UK footer structure and crown SVG are retained.
+.gem-c-layout-footer .govuk-footer__copyright-logo {
+  background-image: url("/uh-brand/uh-government-coat-of-arms.svg");
+}
+
 .govuk-footer__list-item {
   display: inline-block;
   width: 99%;

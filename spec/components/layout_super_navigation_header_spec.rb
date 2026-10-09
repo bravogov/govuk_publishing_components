@@ -135,16 +135,24 @@ describe "Super navigation header", type: :view do
     assert_select ".js-module-initialised[data-module=\"super-navigation-mega-menu\"]", false
   end
 
+  it "uses the same government-only navigation for every public page" do
+    render_component({})
+
+    assert_select ".gem-c-layout-super-navigation-header__column-header", text: "Government activity", count: 1
+    assert_select ".gem-c-layout-super-navigation-header__column--services-and-information", count: 0
+    assert_select ".gem-c-layout-super-navigation-header__navigation-second-item-link[href^='/browse']", count: 0
+    assert_select "a.gem-c-layout-super-navigation-header__navigation-item-link[href='/government/organisations']", count: 1
+    assert_select ".gem-c-layout-super-navigation-header__navigation-second-item-link", count: 6
+  end
+
   it "adds GA4 tracking" do
     render_component({})
 
     assert_select "div[data-module='ga4-event-tracker ga4-link-tracker']"
-    assert_select "a[data-ga4-link]", count: 23
+    assert_select "a[data-ga4-link]", count: 7
     assert_select 'a[data-ga4-link=\'{"event_name":"navigation","type":"header menu bar","external":"false","text":"GOV.UH","section":"Logo","index_link":1,"index_section":0,"index_section_count":2,"index_total":1}\']'
-    assert_select 'a[data-ga4-link=\'{"event_name":"navigation","type":"header menu bar","index_section":1,"index_link":1,"index_section_count":3,"index_total":16,"section":"Services and information"}\']'
-    assert_select 'a[data-ga4-link=\'{"event_name":"navigation","type":"header menu bar","index_section":1,"index_link":16,"index_section_count":3,"index_total":16,"section":"Services and information"}\']'
-    assert_select 'a[data-ga4-link=\'{"event_name":"navigation","type":"header menu bar","index_section":2,"index_link":1,"index_section_count":3,"index_total":6,"section":"Government activity"}\']'
-    assert_select 'a[data-ga4-link=\'{"event_name":"navigation","type":"header menu bar","index_section":2,"index_link":6,"index_section_count":3,"index_total":6,"section":"Government activity"}\']'
+    assert_select 'a[data-ga4-link=\'{"event_name":"navigation","type":"header menu bar","index_section":1,"index_link":1,"index_section_count":3,"index_total":6,"section":"Government activity"}\']'
+    assert_select 'a[data-ga4-link=\'{"event_name":"navigation","type":"header menu bar","index_section":1,"index_link":6,"index_section_count":3,"index_total":6,"section":"Government activity"}\']'
     assert_select "form[data-module='ga4-search-tracker']"
   end
 
