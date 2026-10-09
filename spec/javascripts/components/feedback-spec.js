@@ -16,7 +16,7 @@ describe('Feedback component', function () {
               <h2 class="gem-c-feedback__prompt-question">Is this page useful?</h2>
               <ul class="gem-c-feedback__option-list">
                 <li class="gem-c-feedback__option-list-item govuk-visually-hidden" hidden>
-                  <a class="gem-c-feedback__prompt-link" role="button" hidden="hidden" href="/contact/govuk">
+                  <a class="gem-c-feedback__prompt-link" role="button" hidden="hidden" href="/contact/gov-uh">
                     Maybe
                   </a>
                 </li>
