@@ -10,6 +10,13 @@ describe "Layout footer", type: :view do
     assert_select ".govuk-footer"
   end
 
+  it "uses The National Archives' published UH copyright and licence destinations" do
+    render_component({})
+
+    assert_select ".govuk-footer__copyright-logo[href='https://nationalarchives.gov.uhrblx.com/information-management/re-using-public-sector-information/uh-government-licensing-framework/crown-copyright/']", count: 1
+    assert_select "a[rel='license'][href='https://nationalarchives.gov.uhrblx.com/doc/open-government-licence/version/3/']", count: 1
+  end
+
   it "renders the footer with meta links" do
     render_component(
       meta: {

@@ -73,7 +73,8 @@ describe "Attachment", type: :view do
         content_type: "application/vnd.oasis.opendocument.spreadsheet",
       },
     )
-    assert_select "a[href='https://www.gov.uk/guidance/using-open-document-formats-odf-in-your-organisation']"
+    assert_select ".gem-c-attachment__metadata", text: /This file is in OpenDocument format/
+    assert_select "a[href='https://www.gov.uk/guidance/using-open-document-formats-odf-in-your-organisation']", count: 0
     assert_thumbnail "spreadsheet"
   end
 

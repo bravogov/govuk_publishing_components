@@ -93,7 +93,14 @@ describe "Super navigation header", type: :view do
   it "has the correct default crown logo link" do
     render_component({})
 
-    assert_select "a.govuk-header__homepage-link[href='https://www.gov.uk/']", count: 1
+    assert_select "a.govuk-header__homepage-link[href='https://www.gov.uhrblx.com/']", count: 1
+  end
+
+  it "renders the authorised GOV.UH inline logo rather than the upstream UK wordmark" do
+    render_component({})
+
+    assert_select "svg.govuk-header__logotype[aria-label='GOV.UH'] title", text: "GOV.UH", count: 1
+    assert_select "svg.govuk-header__logotype[aria-label='GOV.UK']", count: 0
   end
 
   it "allows a custom crown logo link" do
@@ -133,7 +140,7 @@ describe "Super navigation header", type: :view do
 
     assert_select "div[data-module='ga4-event-tracker ga4-link-tracker']"
     assert_select "a[data-ga4-link]", count: 23
-    assert_select 'a[data-ga4-link=\'{"event_name":"navigation","type":"header menu bar","external":"false","text":"GOV.UK","section":"Logo","index_link":1,"index_section":0,"index_section_count":2,"index_total":1}\']'
+    assert_select 'a[data-ga4-link=\'{"event_name":"navigation","type":"header menu bar","external":"false","text":"GOV.UH","section":"Logo","index_link":1,"index_section":0,"index_section_count":2,"index_total":1}\']'
     assert_select 'a[data-ga4-link=\'{"event_name":"navigation","type":"header menu bar","index_section":1,"index_link":1,"index_section_count":3,"index_total":16,"section":"Services and information"}\']'
     assert_select 'a[data-ga4-link=\'{"event_name":"navigation","type":"header menu bar","index_section":1,"index_link":16,"index_section_count":3,"index_total":16,"section":"Services and information"}\']'
     assert_select 'a[data-ga4-link=\'{"event_name":"navigation","type":"header menu bar","index_section":2,"index_link":1,"index_section_count":3,"index_total":6,"section":"Government activity"}\']'
