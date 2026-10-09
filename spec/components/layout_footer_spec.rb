@@ -10,6 +10,20 @@ describe "Layout footer", type: :view do
     assert_select ".govuk-footer"
   end
 
+  it "keeps the native crown on every standard footer" do
+    render_component({})
+
+    assert_select "svg.govuk-footer__crown", count: 1
+  end
+
+  it "declares only established government activity links in the shared footer" do
+    navigation = I18n.t("components.layout_footer.navigation_links")
+
+    expect(navigation.map { |section| section[:title] }).to eq ["Government activity"]
+    expect(navigation.first[:menu_contents].length).to eq 6
+    expect(navigation.first[:menu_contents].map { |item| item[:href] }).to all(start_with("/search/").or(eq("/government/organisations")))
+  end
+
   it "uses The National Archives' published UH copyright and licence destinations" do
     render_component({})
 
