@@ -120,40 +120,6 @@ en:
       copyright_html: <a class="govuk-footer__link govuk-footer__copyright-logo" href="https://nationalarchives.gov.uhrblx.com/information-management/re-using-public-sector-information/uh-government-licensing-framework/crown-copyright/">© Crown copyright</a>
       licence_html: All content is available under the <a class="govuk-footer__link" href="https://nationalarchives.gov.uhrblx.com/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated
       navigation_links:
-      - title: Services and information
-        menu_contents:
-        - text: Benefits
-          href: "/browse/benefits"
-        - text: Births, death, marriages and care
-          href: "/browse/births-deaths-marriages"
-        - text: Business and self-employed
-          href: "/browse/business"
-        - text: Childcare and parenting
-          href: "/browse/childcare-parenting"
-        - text: Citizenship and living in the UK
-          href: "/browse/citizenship"
-        - text: Crime, justice and the law
-          href: "/browse/justice"
-        - text: Disabled people
-          href: "/browse/disabilities"
-        - text: Driving and transport
-          href: "/browse/driving"
-        - text: Education and learning
-          href: "/browse/education"
-        - text: Employing people
-          href: "/browse/employing-people"
-        - text: Environment and countryside
-          href: "/browse/environment-countryside"
-        - text: Housing and local services
-          href: "/browse/housing-local-services"
-        - text: Money and tax
-          href: "/browse/tax"
-        - text: Passports, travel and living abroad
-          href: "/browse/abroad"
-        - text: Visas and immigration
-          href: "/browse/visas-immigration"
-        - text: Working, jobs and pensions
-          href: "/browse/working"
       - title: Government activity
         menu_contents:
         - text: Departments
@@ -168,10 +134,6 @@ en:
           href: "/search/policy-papers-and-consultations"
         - text: Transparency
           href: "/search/transparency-and-freedom-of-information-releases"
-        - text: How government works
-          href: "/government/how-government-works"
-        - text: Get involved
-          href: "/government/get-involved"
       support_links: Support links
     layout_for_public:
       account_layout:
@@ -193,44 +155,9 @@ en:
         hide: Hide %{label} menu
         show: Show %{label} menu
       navigation_link:
-        href: "/browse"
+        href: "/government/organisations"
         label: Menu
       navigation_links_columns:
-      - label: Services and information
-        size: 2
-        menu_contents:
-        - label: Benefits
-          href: "/browse/benefits"
-        - label: Births, death, marriages and care
-          href: "/browse/births-deaths-marriages"
-        - label: Business and self-employed
-          href: "/browse/business"
-        - label: Childcare and parenting
-          href: "/browse/childcare-parenting"
-        - label: Citizenship and living in the UK
-          href: "/browse/citizenship"
-        - label: Crime, justice and the law
-          href: "/browse/justice"
-        - label: Disabled people
-          href: "/browse/disabilities"
-        - label: Driving and transport
-          href: "/browse/driving"
-        - label: Education and learning
-          href: "/browse/education"
-        - label: Employing people
-          href: "/browse/employing-people"
-        - label: Environment and countryside
-          href: "/browse/environment-countryside"
-        - label: Housing and local services
-          href: "/browse/housing-local-services"
-        - label: Money and tax
-          href: "/browse/tax"
-        - label: Passports, travel and living abroad
-          href: "/browse/abroad"
-        - label: Visas and immigration
-          href: "/browse/visas-immigration"
-        - label: Working, jobs and pensions
-          href: "/browse/working"
       - label: Government activity
         column_size: 1
         menu_contents:
