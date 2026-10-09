@@ -96,6 +96,13 @@ describe "Super navigation header", type: :view do
     assert_select "a.govuk-header__homepage-link[href='https://www.gov.uhrblx.com/']", count: 1
   end
 
+  it "renders the authorised GOV.UH inline logo rather than the upstream UK wordmark" do
+    render_component({})
+
+    assert_select "svg.govuk-header__logotype[aria-label='GOV.UH'] title", text: "GOV.UH", count: 1
+    assert_select "svg.govuk-header__logotype[aria-label='GOV.UK']", count: 0
+  end
+
   it "allows a custom crown logo link" do
     render_component({
       logo_link: "https://www.example.com/",
