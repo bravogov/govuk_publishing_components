@@ -1,0 +1,93 @@
+name: Publish reviewed GOV.UH component gem
+
+# Publish only after the ordinary native component CI has passed on main.
+# Changing the native component version is the release trigger; code-only
+# updates cannot republish an existing immutable package version.
+on:
+  workflow_run:
+    workflows:
+      - Continuous integration
+    branches:
+      - main
+    types:
+      - completed
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  publish:
+    name: Build and publish native gem to BravoGov GitHub Packages
+    if: ${{ github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_repository.full_name == 'bravogov/govuk_publishing_components' && github.event.workflow_run.head_branch == 'main' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the CI-tested source SHA
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+          persist-credentials: false
+          fetch-depth: 2
+
+      - name: Require a changed native gem version
+        id: release
+        shell: bash
+        run: |
+          if git diff --name-only HEAD^ HEAD -- lib/govuk_publishing_components/version.rb | grep -Fxq 'lib/govuk_publishing_components/version.rb'; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No component version update; no package to publish."
+          fi
+
+      - name: Set up Ruby
+        if: steps.release.outputs.changed == 'true'
+        uses: ruby/setup-ruby@e8944e80fb94b20106697132f8c20c665fab29e9 # v1.325.0
+        with:
+          ruby-version: "3.4"
+          bundler-cache: false
+
+      - name: Set up Node
+        if: steps.release.outputs.changed == 'true'
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "22"
+          cache: yarn
+
+      - name: Install native frontend assets
+        if: steps.release.outputs.changed == 'true'
+        run: yarn install --frozen-lockfile
+
+      - name: Package and verify the assets
+        if: steps.release.outputs.changed == 'true'
+        run: |
+          gem build govuk_publishing_components.gemspec
+          ruby -rrubygems/package -e '
+            files = Dir["govuk_publishing_components-*.gem"]
+            abort "Expected one package" unless files.length == 1
+            pkg = Gem::Package.new(files.first)
+            paths = pkg.contents
+            %w[
+              node_modules/govuk-frontend/
+              app/assets/stylesheets/govuk_publishing_components/
+              config/locales/en.yml
+            ].each do |required|
+              abort "Missing package assets: #{required}" unless paths.any? { |path| path.start_with?(required) }
+            end
+            abort "Unexpected version" unless pkg.spec.version.to_s == "70.2.1.1"
+            puts "REVIEWED_UH_PACKAGED_GEM_PASS"
+          '
+          sha256sum govuk_publishing_components-*.gem
+
+      - name: Publish only to the BravoGov GitHub Packages registry
+        if: steps.release.outputs.changed == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$HOME/.gem"
+          printf -- "---\n:github: Bearer %s\n" "$GITHUB_TOKEN" > "$HOME/.gem/credentials"
+          chmod 600 "$HOME/.gem/credentials"
+          gem push --key github --host https://rubygems.pkg.github.com/bravogov govuk_publishing_components-70.2.1.1.gem
+          rm -f "$HOME/.gem/credentials"
