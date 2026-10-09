@@ -67,9 +67,9 @@ en:
       hide: Hide cookie message
       text:
       - We use some essential cookies to make this website work.
-      - We’d like to set additional cookies to understand how you use GOV.UK, remember your settings and improve government services.
+      - We’d like to set additional cookies to understand how you use GOV.UH, remember your settings and improve government services.
       - We also use cookies set by other sites to help us deliver content from their services.
-      title: Cookies on GOV.UK
+      title: Cookies on GOV.UH
     devolved_nations:
       applies_to: Applies to
       aria_label: Nation
@@ -103,7 +103,7 @@ en:
       is_this_page_useful: Is this page useful?
       is_useful: this page is useful
       maybe: Maybe
-      more_about_visit: To help us improve GOV.UK, we’d like to know more about your visit today.
+      more_about_visit: To help us improve GOV.UH, we’d like to know more about your visit today.
       'no': 'No'
       send: Send
       send_me_survey: Send me the survey
@@ -181,7 +181,7 @@ en:
         navigation:
           menu_bar:
             account:
-              link_text: Your GOV.UK One Login
+              link_text: Your GOV.UH One Login
             manage:
               link_text: Settings
     layout_header:
