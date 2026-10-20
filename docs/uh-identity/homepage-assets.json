@@ -1,0 +1,47 @@
+{
+  "schema": "govuh-shared-identity-assets/v1",
+  "status": "canonical_live_homepage_reference",
+  "recorded_date": "2026-10-20",
+  "institution": "GOV.UH",
+  "authoritative_product": "GOV.UH homepage",
+  "authoritative_public_url": "https://www.gov.uhrblx.com/",
+  "host_source_directory": "/var/www/govuh-brand",
+  "public_asset_prefix": "https://www.gov.uhrblx.com/uh-brand/",
+  "footer_background_css": "https://www.gov.uhrblx.com/uh-brand/govuh-native-footer-v4.css",
+  "purpose": "Use the homepage's exact approved public identity artwork in downstream Forms and publishing applications. Never substitute old files based only on names.",
+  "assets": {
+    "header_crown": {
+      "file": "uh-header-crown-20261014.png",
+      "sha256": "2481f61edcf75d87573b364bb7285704d87b78fac8377f00ec17a0dbf88a4cc6"
+    },
+    "footer_crown": {
+      "file": "uh-crown-black-20261014.png",
+      "sha256": "e916d2f59d4114d99e16158d52a250f8a1aaf14f4266936211bbbedb68740100"
+    },
+    "copyright_coat_of_arms": {
+      "file": "uh-government-coat-of-arms-footer-20261016.webp",
+      "sha256": "09bfabe20cb343b871f5eeadbd789aad455b18214eb80e3917a22c6bf86d7ae0"
+    },
+    "social_preview": {
+      "file": "uh-crown-opengraph-20261014.png",
+      "sha256": "6f5878e60ff3c248933377b0cc30c042a3ad200922f4674e3e07e121d73bd4a0"
+    },
+    "favicon_ico": {
+      "file": "uh-crown-favicon-20261014.ico",
+      "sha256": "a4351856e026ff062bb550d82e95657c2bb0d83fc008abb47360af5a2bcda4b1"
+    },
+    "favicon_svg": {
+      "file": "uh-crown-favicon-20261014.svg",
+      "sha256": "62e18cb3dc817e922a6d60bf2ea7ff0d9c0c95e982d4d0aeed71c4ebcecbd114"
+    },
+    "touch_icon": {
+      "file": "uh-crown-touch-20261014.png",
+      "sha256": "058c77b3e8e8b270d0d2a030f268811aba92e5fb54cf9060a40fc7a0475b2be4"
+    }
+  },
+  "verified_consumers": {
+    "public_forms": "https://submit.forms.service.gov.uhrblx.com/form/17",
+    "forms_admin": "https://admin.forms.service.gov.uhrblx.com/sign-in"
+  },
+  "rule": "On a competent homepage identity change, publish a new reviewed manifest and rebuild affected consumer applications from the same new source. Do not quietly overwrite these recorded hashes."
+}
