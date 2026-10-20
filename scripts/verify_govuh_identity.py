@@ -16,6 +16,7 @@ from bs4 import BeautifulSoup
 MANIFEST = Path("/etc/uhde/identity/homepage-assets.json")
 HOMEPAGE = "https://www.gov.uhrblx.com"
 FORMS = "https://submit.forms.service.gov.uhrblx.com"
+FRONTDOOR = "https://forms.service.gov.uhrblx.com"
 ADMIN = "https://admin.forms.service.gov.uhrblx.com"
 TIMEOUT = 18
 
@@ -39,10 +40,10 @@ def sources_ok(session, manifest):
         require(host_copy.is_file(), f"Canonical host file absent: {name}")
         require(hashlib.sha256(host_copy.read_bytes()).hexdigest() == expected,
                 f"Canonical host file changed: {name}")
-        for origin in (HOMEPAGE, FORMS, ADMIN):
+        for origin in (HOMEPAGE, FORMS, ADMIN, FRONTDOOR):
             actual = hashlib.sha256(fetch(session, origin + "/uh-brand/" + name).content).hexdigest()
             require(actual == expected, f"Identity mismatch {role} at {origin}: {name}")
-    print("ASSET_SHA256_PARITY_PASS", len(manifest["assets"]), "assets x 3 products")
+    print("ASSET_SHA256_PARITY_PASS", len(manifest["assets"]), "assets x 4 products")
 
 
 def html_ok(session):
@@ -51,6 +52,7 @@ def html_ok(session):
         "homepage": BeautifulSoup(fetch(session, HOMEPAGE + "/").text, "html.parser"),
         "forms_runner": BeautifulSoup(fetch(session, FORMS + "/form/17").text, "html.parser"),
         "forms_admin": BeautifulSoup(fetch(session, ADMIN + "/sign-in").text, "html.parser"),
+        "forms_frontdoor": BeautifulSoup(fetch(session, FRONTDOOR + "/").text, "html.parser"),
     }
     for name, page in pages.items():
         logo = page.select_one("header svg.govuk-header__logotype image")
@@ -65,17 +67,19 @@ def html_ok(session):
     ]
     require(runner_footer == required_footer, "Forms runner footer identity diverged")
     require(admin_footer == required_footer, "Forms admin footer identity diverged")
+    frontdoor_footer = [i.get("src") for i in pages["forms_frontdoor"].select("footer img")]
+    require(frontdoor_footer == required_footer, "Forms front door footer identity diverged")
     homepage_footer = [i.get("src") for i in pages["homepage"].select("footer img")]
     require("/uh-brand/uh-crown-black-20261014.png" in homepage_footer,
             "Homepage black footer crown changed")
     require("uh-government-coat-of-arms-footer-20261016.webp" in
             fetch(session, HOMEPAGE + "/uh-brand/govuh-native-footer-v4.css").text,
             "Homepage copyright CSS no longer uses the recorded coat of arms")
-    for name in ("forms_runner", "forms_admin"):
+    for name in ("forms_runner", "forms_admin", "forms_frontdoor"):
         meta = pages[name].select_one('meta[property="og:image"]')
         require(meta and meta.get("content") == "/uh-brand/uh-crown-opengraph-20261014.png",
                 f"Sharing image identity mismatch: {name}")
-    print("LIVE_PAGE_MARKUP_PARITY_PASS homepage, Forms runner, Forms admin")
+    print("LIVE_PAGE_MARKUP_PARITY_PASS homepage, Forms runner, Forms admin, Forms front door")
 
 
 def main():

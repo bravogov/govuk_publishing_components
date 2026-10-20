@@ -8,7 +8,7 @@
   "host_source_directory": "/var/www/govuh-brand",
   "public_asset_prefix": "https://www.gov.uhrblx.com/uh-brand/",
   "footer_background_css": "https://www.gov.uhrblx.com/uh-brand/govuh-native-footer-v4.css",
-  "purpose": "Use the homepage's exact approved public identity artwork in downstream Forms and publishing applications. Never substitute old files based only on names.",
+  "purpose": "Use the homepage's exact approved public identity artwork in the Forms service homepage, Forms runner, Forms admin and future publishing applications. Never substitute old files based only on names.",
   "assets": {
     "header_crown": {
       "file": "uh-header-crown-20261014.png",
@@ -41,7 +41,8 @@
   },
   "verified_consumers": {
     "public_forms": "https://submit.forms.service.gov.uhrblx.com/form/17",
-    "forms_admin": "https://admin.forms.service.gov.uhrblx.com/sign-in"
+    "forms_admin": "https://admin.forms.service.gov.uhrblx.com/sign-in",
+    "forms_frontdoor": "https://forms.service.gov.uhrblx.com/"
   },
   "rule": "On a competent homepage identity change, publish a new reviewed manifest and rebuild affected consumer applications from the same new source. Do not quietly overwrite these recorded hashes."
 }
