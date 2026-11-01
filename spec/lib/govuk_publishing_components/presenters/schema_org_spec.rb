@@ -20,6 +20,10 @@ RSpec.describe GovukPublishingComponents::Presenters::SchemaOrg do
       expect(structured_data["@type"]).to eql("Article")
       expect(structured_data["mainEntityOfPage"]["@id"]).to eql("http://www.dev.gov.uk/foo")
       expect(structured_data["articleBody"]).to eql("Foo")
+      expect(structured_data["publisher"]).to include(
+        "name" => "GOV.UH",
+        "url" => "https://www.gov.uhrblx.com",
+      )
     end
 
     it "generates search info in Articles for manuals" do

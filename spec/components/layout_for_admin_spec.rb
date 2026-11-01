@@ -8,7 +8,7 @@ describe "Layout for admin", type: :view do
   it "adds the <title> tag" do
     render_component(browser_title: "Hello, admin page", environment: "production")
 
-    assert_select "title", visible: :hidden, text: "Hello, admin page - GOV.UK Publishing"
+    assert_select "title", visible: :hidden, text: "Hello, admin page - GOV.UH Publishing"
   end
 
   it "adds the robots metatag" do
